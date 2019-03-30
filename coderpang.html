@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<head>
+	<title>GetToKnowPang()</title>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans|Nanum+Brush+Script|Press+Start+2P|Special+Elite|Unkempt" rel="stylesheet">
+	<style>
+	html, body {
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		font-family: 'Noto Sans', sans-serif; 
+		font-size: 1.2em;
+	}
+	
+	a {
+		text-decoration: none;
+		text-align: center;
+		color: inherit;
+	}
+	
+	main {
+		margin-left: 2em;
+		margin-right: 2em;
+		border:1px solid;
+		border-bottom: none;
+		min-height: calc(100% - 300px);
+	}
+	
+	.main-div {
+		padding: 1.5em;
+	}
+	
+	nav {
+		text-align: center;
+	}
+	
+	.nav-btn {
+		display: inline-block;
+		width: 7em;
+		border: 1px solid;
+		padding: 1em;
+		text-align: center;
+		margin-bottom: 2em;
+	}
+	
+	.nav-btn:hover {
+		background-color: grey;
+		color: white;
+	}
+	
+	.nav-btn-selected {
+		background-color: #e4d9d9;
+		color: black;
+	}
+	
+	blockquote{
+	  font-size: 30px;
+	  background: #f9f9f9;
+	  border-left: 10px solid #ccc;
+	  margin: .5em 10px;
+	  padding: 0 10px;
+	  quotes: "\201C""\201D""\2018""\2019";
+	  padding: 10px 20px;
+	  line-height: 1.4;
+	}
+
+	blocquote:before {
+	  content: open-quote;
+	  display: inline;
+	  height: 0;
+	  line-height: 0;
+	  left: -10px;
+	  position: relative;
+	  top: 30px;
+	  color: #ccc;
+	  font-size: 3em;
+	}
+
+	p{
+	  margin: 0;
+	}
+
+	.author{
+	  margin:0;
+	  text-align: right;
+	  font-size: 1em;
+	  font-style: italic;
+	}
+
+	.code-text {
+			font-family: 'Press Start 2P', cursive;
+			padding: 1em;
+			text-align: center;
+	}
+	
+	</style>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+	
+	
+	$(document).ready( function(){
+		$(".nav-btn").click( function(){
+		
+			var page = $(this).attr("page");
+			$(".main-div").hide();
+			$(".nav-btn").removeClass("nav-btn-selected");
+			var shown_div = "#div-" + page;
+			var btn_selected ="#btn-" + page;
+			$(shown_div).show();
+			$(btn_selected).addClass("nav-btn-selected");
+			console.log(shown_div);
+		});
+	});
+		
+	</script>
+	
+</head>
+
+<body>	
+	<header>
+		<h1 class="code-text">Pang as a coder</h1>
+		<nav>
+			<a href="#" id="btn-Overview" page="Overview" class="nav-btn">Overview</a>
+			<a href="#" id="btn-Skills" page="Skills" class="nav-btn">Skills</a>
+			<a href="#" id="btn-Projects" page="Projects" class="nav-btn">Projects</a>
+			<a href="#" id="btn-Story" page="Story" class="nav-btn">Story</a>
+		</nav>
+	</header>
+	<main>
+		<div id="div-Overview" class="main-div">
+			<div id="div-Status">Status: Studying about Code Review</div>
+		</div>
+		
+		<div id="div-Skills" class="main-div" style="display: none;">Skills</div>
+		
+		<div id="div-Projects" class="main-div" style="display: none;">Projects</div>
+		
+		<div id="div-Story" class="main-div" style="display: none;">
+			 <blockquote>
+			 <p class="quotation">Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program.</p>
+			<p class="author">Linus Torvalds</p>
+			</blockquote> 
+			<br />
+			<p>
+			Programming wasn't my first choice. In our class prophecy in high school, everyone thought I'd be a writer because I loved writing stories. Now, I write code. Not the kind of writer they expected but still a writer.
+			</p>
+			<br />
+			<p>
+			How I ended up writing instructions for computers instead of writing literary works is a long story involving losing a bet. But I'm thankful for that loss. Without it, I would have never learned the <em>magic</em> of creating software.
+			</p>
+		
+
+		<blockquote>
+			 <p class="quotation">Some of the best programming is done on paper, really. Putting it into the computer is just a minor detail.</p>
+			<p class="author">Max Kanat-Alexander</p>
+		</blockquote> 
+		<blockquote>
+			 <p class="quotation">The amount of surprise you feel when something goes wrong is directly proportional to the amount of trust and faith you have in the code being run.</p>
+			<p class="author">Andrew Hunt, <em style="font-size: .7em">The Pragmatic Programmer: From Journeyman to Master</em></p>
+		</blockquote> 
+		<br />
+		<p>
+		I developed the habit of drawing flowcharts and writing pseudocodes before facing a computer to program. I used to spent sleepless nights understanding my own code. The very thing I wrote was working against me. That's when I realized that computers are only smart when you give smart instructions.
+		</p>		
+		</div>
+	</main>
+</body>	
+</html>
