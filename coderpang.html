@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <head>
 	<title>GetToKnowPang()</title>
-	<link href="https://fonts.googleapis.com/css?family=Noto+Sans|Nanum+Brush+Script|Press+Start+2P|Special+Elite|Unkempt" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Major+Mono+Display|Monoton|Noto+Sans|Nanum+Brush+Script|Press+Start+2P|Special+Elite|Unkempt" rel="stylesheet">
+	
 	<style>
 	html, body {
 		margin: 0;
@@ -11,15 +12,15 @@
 		font-size: 1.2em;
 	}
 	
-	a {
+	a, h1, h5 {
 		text-decoration: none;
 		text-align: center;
 		color: inherit;
 	}
 	
 	main {
-		margin-left: 2em;
-		margin-right: 2em;
+		margin-left: 1em;
+		margin-right: 1em;
 		border:1px solid;
 		border-bottom: none;
 		min-height: calc(100% - 300px);
@@ -48,7 +49,7 @@
 	}
 	
 	.nav-btn-selected {
-		background-color: #e4d9d9;
+		background-color: #d0d0d0;
 		color: black;
 	}
 	
@@ -87,14 +88,13 @@
 	}
 
 	.code-text {
-			font-family: 'Press Start 2P', cursive;
-			padding: 1em;
-			text-align: center;
+		font-family: 'Press Start 2P', cursive;
 	}
 	
 	</style>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 	<script>
 	
 	
@@ -120,20 +120,70 @@
 	<header>
 		<h1 class="code-text">Pang as a coder</h1>
 		<nav>
-			<a href="#" id="btn-Overview" page="Overview" class="nav-btn">Overview</a>
-			<a href="#" id="btn-Skills" page="Skills" class="nav-btn">Skills</a>
-			<a href="#" id="btn-Projects" page="Projects" class="nav-btn">Projects</a>
-			<a href="#" id="btn-Story" page="Story" class="nav-btn">Story</a>
+			<a href="#Overview" id="btn-Overview" page="Overview" class="nav-btn">Overview</a>
+			<a href="#Skills" id="btn-Skills" page="Skills" class="nav-btn">Skills</a>
+			<a href="#Projects" id="btn-Projects" page="Projects" class="nav-btn">Projects</a>
+			<a href="#Story" id="btn-Story" page="Story" class="nav-btn">Story</a>
 		</nav>
 	</header>
 	<main>
 		<div id="div-Overview" class="main-div">
-			<div id="div-Status">Status: Studying about Code Review</div>
+		
+			<h5><code><span style="color:blue;">&lt;programmer&gt;</span><span style="color:green;">&lt;computerScientist&gt;</span>
+			<br />
+			<span style="font-size: 3em;">Farrah Marie Chavez</span>
+			<br />
+			<span style="color:green;">&lt;/computerScientist&gt;</span><span style="color:blue;">&lt;/programmer&gt;</span></code></h5>
+			<br />
+			<p style="text-align: center;">I graduated with bachelor's degree in Computer Science.<br />
+			I fell in love with programming when I was able to interact with the code I wrote.<br />
+			<br />
+			My favorite things to develop are: 
+			<ul style="list-style:none; text-align: center;">
+			<li class="code-text" style="color: green;">games</li> 
+			<li style="color: blue; font-family: 'Fredericka the Great', cursive;">educational software</li> 
+			<li style="font-family: 'Monoton', cursive;">cryptographic tools</li>
+			<li style="font-family: 'Major Mono Display', monospace;">linguistics tools</li> 
+			</ul>
 		</div>
 		
-		<div id="div-Skills" class="main-div" style="display: none;">Skills</div>
+		<div id="div-Skills" class="main-div" style="display: none;">
+		<strong>Technical Skills:</strong>
+	<ul>
+		<li>Software Development</li>
+		<li>Web Development</li>
+		<li>Database Management</li>
+	</ul>
+<strong>Languages:</strong>
+	<ul>
+		<li>C</li>
+		<li>C#</li>
+		<li>Java</li>
+		<li>PHP</li>
+		<li>ASP</li>
+		<li>Javascript</li>
+		<li>MySQL</li>
+		<li>HTML5</li>
+		<li>jQuery</li>
+		<li>Android</li>
+		<li>ActionScript 3</li>
+	</ul>
+			
+<strong>Software:</strong>
+	<ul>
+		<li>Visual Studio</li>
+		<li>Eclipse</li>
+		<li>XAMPP</li>
+		<li>TeamCity</li>
+		<li>Jenkins</li>
+		<li>Macromedia Fireworks</li>
+	</ul>
 		
-		<div id="div-Projects" class="main-div" style="display: none;">Projects</div>
+		</div>
+		
+		<div id="div-Projects" class="main-div" style="display: none;">
+		
+		</div>
 		
 		<div id="div-Story" class="main-div" style="display: none;">
 			 <blockquote>
@@ -148,8 +198,7 @@
 			<p>
 			How I ended up writing instructions for computers instead of writing literary works is a long story involving losing a bet. But I'm thankful for that loss. Without it, I would have never learned the <em>magic</em> of creating software.
 			</p>
-		
-
+			<br />
 		<blockquote>
 			 <p class="quotation">Some of the best programming is done on paper, really. Putting it into the computer is just a minor detail.</p>
 			<p class="author">Max Kanat-Alexander</p>
