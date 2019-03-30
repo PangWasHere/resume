@@ -1,100 +1,9 @@
 <!DOCTYPE html>
 <head>
-	<title>GetToKnowPang()</title>
+	<title>Pang.AsCoder()</title>
 	<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Major+Mono+Display|Monoton|Noto+Sans|Nanum+Brush+Script|Press+Start+2P|Special+Elite|Unkempt" rel="stylesheet">
-	
-	<style>
-	html, body {
-		margin: 0;
-		padding: 0;
-		height: 100%;
-		font-family: 'Noto Sans', sans-serif; 
-		font-size: 1.2em;
-	}
-	
-	a, h1, h5 {
-		text-decoration: none;
-		text-align: center;
-		color: inherit;
-	}
-	
-	main {
-		margin-left: 1em;
-		margin-right: 1em;
-		border:1px solid;
-		border-bottom: none;
-		min-height: calc(100% - 300px);
-	}
-	
-	.main-div {
-		padding: 1.5em;
-	}
-	
-	nav {
-		text-align: center;
-	}
-	
-	.nav-btn {
-		display: inline-block;
-		width: 7em;
-		border: 1px solid;
-		padding: 1em;
-		text-align: center;
-		margin-bottom: 2em;
-	}
-	
-	.nav-btn:hover {
-		background-color: grey;
-		color: white;
-	}
-	
-	.nav-btn-selected {
-		background-color: #d0d0d0;
-		color: black;
-	}
-	
-	blockquote{
-	  font-size: 30px;
-	  background: #f9f9f9;
-	  border-left: 10px solid #ccc;
-	  margin: .5em 10px;
-	  padding: 0 10px;
-	  quotes: "\201C""\201D""\2018""\2019";
-	  padding: 10px 20px;
-	  line-height: 1.4;
-	}
-
-	blocquote:before {
-	  content: open-quote;
-	  display: inline;
-	  height: 0;
-	  line-height: 0;
-	  left: -10px;
-	  position: relative;
-	  top: 30px;
-	  color: #ccc;
-	  font-size: 3em;
-	}
-
-	p{
-	  margin: 0;
-	}
-
-	.author{
-	  margin:0;
-	  text-align: right;
-	  font-size: 1em;
-	  font-style: italic;
-	}
-
-	.code-text {
-		font-family: 'Press Start 2P', cursive;
-	}
-	
-	</style>
+	<link href="personal-styles.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 	<script>
 	
 	
@@ -118,12 +27,14 @@
 
 <body>	
 	<header>
+		<nav></nav>
 		<h1 class="code-text">Pang as a coder</h1>
 		<nav>
-			<a href="#Overview" id="btn-Overview" page="Overview" class="nav-btn">Overview</a>
-			<a href="#Skills" id="btn-Skills" page="Skills" class="nav-btn">Skills</a>
-			<a href="#Projects" id="btn-Projects" page="Projects" class="nav-btn">Projects</a>
-			<a href="#Story" id="btn-Story" page="Story" class="nav-btn">Story</a>
+			<a href="./" id="btn-Back" class="nav-btn">&lt;</a>
+			<a href="#Overview" id="btn-Overview" page="Overview" class="nav-btn wide-btn">Overview</a>
+			<a href="#Skills" id="btn-Skills" page="Skills" class="nav-btn rect-btn">Skills</a>
+			<a href="#Story" id="btn-Story" page="Story" class="nav-btn rect-btn">Story</a>
+			<a href="#Contact" id="btn-Contact" page="Contact" class="nav-btn rect-btn">Contact</a>
 		</nav>
 	</header>
 	<main>
@@ -181,10 +92,6 @@
 		
 		</div>
 		
-		<div id="div-Projects" class="main-div" style="display: none;">
-		
-		</div>
-		
 		<div id="div-Story" class="main-div" style="display: none;">
 			 <blockquote>
 			 <p class="quotation">Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program.</p>
@@ -211,6 +118,34 @@
 		<p>
 		I developed the habit of drawing flowcharts and writing pseudocodes before facing a computer to program. I used to spent sleepless nights understanding my own code. The very thing I wrote was working against me. That's when I realized that computers are only smart when you give smart instructions.
 		</p>		
+		</div>
+		
+				
+		<div id="div-Contact" class="main-div" style="display: none;">
+			<div class="container">
+			  <form action="action_page.php">
+
+				<label for="fname">First Name</label><br />
+				<input type="text" id="fname" name="firstname" placeholder="Your name..">
+				<br />
+				<label for="lname">Last Name</label><br />
+				<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+				<br />
+				<label for="country">Purpose</label><br />
+				<select id="dropdown-Purpose" name="purpose">
+				  <option value="australia">Inquire</option>
+				  <option value="canada">Hire</option>
+				  <option value="usa">Collaborate</option>
+				</select>
+				<br />
+				<label for="subject">Subject</label>
+				<br />
+				<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+				<br />
+				<div style="text-align: right;"><input type="submit" value="Submit"></div>
+
+			  </form>
+			</div>
 		</div>
 	</main>
 </body>	
