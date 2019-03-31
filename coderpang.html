@@ -4,23 +4,48 @@
 	<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Major+Mono+Display|Monoton|Noto+Sans|Nanum+Brush+Script|Press+Start+2P|Special+Elite|Unkempt" rel="stylesheet">
 	<link href="personal-styles.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<script>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.min.js"></script>
+	<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+	<script type="text/javascript">
 	
-	
+	/* Main Navigation Buttons */
 	$(document).ready( function(){
 		$(".nav-btn").click( function(){
-		
 			var page = $(this).attr("page");
 			$(".main-div").hide();
-			$(".nav-btn").removeClass("nav-btn-selected");
+			$('.nav-btn').removeClass("nav-btn-selected");
 			var shown_div = "#div-" + page;
 			var btn_selected ="#btn-" + page;
 			$(shown_div).show();
 			$(btn_selected).addClass("nav-btn-selected");
 			console.log(shown_div);
 		});
+		
+	/* Tabs in Skills section */
+	$(".tab-btn").click( function() {
+		var code_lang = $(this).attr("lang");
+		$(".tab-content").hide();
+		var shown_tab = "#div-Code" + code_lang;
+		$(shown_tab).show();
+		
 	});
 		
+	/* Code Snippet Syntax Highlighter using HighlightJS */	
+	  document.querySelectorAll('pre code').forEach((block) => {
+		hljs.highlightBlock(block);
+		hljs.lineNumbersBlock(block);
+	  });
+	  
+	  	/*Email JS scripts */
+        emailjs.init("user_d7C879uAXjNHoEVoyQi3r");
+		document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                this.contact_number.value = Math.random() * 100000 | 0;
+                emailjs.sendForm('contact_service', 'contact_template', this);
+		});
+	});	
 	</script>
 	
 </head>
@@ -31,10 +56,10 @@
 		<h1 class="code-text">Pang as a coder</h1>
 		<nav>
 			<a href="./" id="btn-Back" class="nav-btn">&lt;</a>
-			<a href="#Overview" id="btn-Overview" page="Overview" class="nav-btn wide-btn">Overview</a>
+			<a href="#Overview" id="btn-Overview" page="Overview" class="nav-btn rect-btn">Overview</a>
 			<a href="#Skills" id="btn-Skills" page="Skills" class="nav-btn rect-btn">Skills</a>
 			<a href="#Story" id="btn-Story" page="Story" class="nav-btn rect-btn">Story</a>
-			<a href="#Contact" id="btn-Contact" page="Contact" class="nav-btn rect-btn">Contact</a>
+			<a href="" id="btn-Contact" page="Contact" class="nav-btn rect-btn">Contact</a>
 		</nav>
 	</header>
 	<main>
@@ -59,37 +84,224 @@
 		</div>
 		
 		<div id="div-Skills" class="main-div" style="display: none;">
-		<strong>Technical Skills:</strong>
-	<ul>
-		<li>Software Development</li>
-		<li>Web Development</li>
-		<li>Database Management</li>
-	</ul>
-<strong>Languages:</strong>
-	<ul>
-		<li>C</li>
-		<li>C#</li>
-		<li>Java</li>
-		<li>PHP</li>
-		<li>ASP</li>
-		<li>Javascript</li>
-		<li>MySQL</li>
-		<li>HTML5</li>
-		<li>jQuery</li>
-		<li>Android</li>
-		<li>ActionScript 3</li>
-	</ul>
-			
-<strong>Software:</strong>
-	<ul>
-		<li>Visual Studio</li>
-		<li>Eclipse</li>
-		<li>XAMPP</li>
-		<li>TeamCity</li>
-		<li>Jenkins</li>
-		<li>Macromedia Fireworks</li>
-	</ul>
 		
+		<div id="div-CodeText" class="tab-content">
+		<strong>Technical Skills:</strong>
+			<ul>
+				<li>Software Development</li>
+				<li>Web Development</li>
+				<li>Database Management</li>
+			</ul>
+		<strong>Languages:</strong>
+			<ul>
+				<li>C</li>
+				<li>C#</li>
+				<li>Java</li>
+				<li>PHP</li>
+				<li>ASP</li>
+				<li>JavaScript</li>
+				<li>MySQL</li>
+				<li>HTML5</li>
+				<li>jQuery</li>
+				<li>Android</li>
+				<li>ActionScript 3</li>
+				<li>UML</li>
+			</ul>
+					
+		<strong>Software:</strong>
+			<ul>
+				<li>Visual Studio</li>
+				<li>Eclipse</li>
+				<li>XAMPP</li>
+				<li>TeamCity</li>
+				<li>Jenkins</li>
+				<li>Macromedia Fireworks</li>
+			</ul>
+		</div>
+		<!-- TODO: Load code snippets from a file instead of hardcoding. -->
+		<div id="div-CodeHTML" class="tab-content" style="display: none;">
+		<pre><code class="html">&lt;strong&gt;Technical Skills:&lt;/strong&gt;
+&lt;ul&gt;
+	&lt;li&gt;Software Development&lt;/li&gt;
+	&lt;li&gt;Web Development&lt;/li&gt;
+	&lt;li&gt;Database Management&lt;/li&gt;
+&lt;/ul&gt;
+&lt;strong&gt;Languages:&lt;/strong&gt;
+&lt;ul&gt;
+	&lt;li&gt;C&lt;/li&gt;
+	&lt;li&gt;C#&lt;/li&gt;
+	&lt;li&gt;Java&lt;/li&gt;
+	&lt;li&gt;PHP&lt;/li&gt;
+	&lt;li&gt;ASP&lt;/li&gt;
+	&lt;li&gt;JavaScript&lt;/li&gt;
+	&lt;li&gt;MySQL&lt;/li&gt;
+	&lt;li&gt;HTML5&lt;/li&gt;
+	&lt;li&gt;jQuery&lt;/li&gt;
+	&lt;li&gt;Android&lt;/li&gt;
+	&lt;li&gt;ActionScript 3&lt;/li&gt;
+	&lt;li&gt;UML&lt;/li&gt;
+&lt;/ul&gt;		
+&lt;strong&gt;Software:&lt;/strong&gt;
+&lt;ul&gt;
+	&lt;li&gt;Visual Studio&lt;/li&gt;
+	&lt;li&gt;Eclipse&lt;/li&gt;
+	&lt;li&gt;XAMPP&lt;/li&gt;
+	&lt;li&gt;TeamCity&lt;/li&gt;
+	&lt;li&gt;Jenkins&lt;/li&gt;
+	&lt;li&gt;Macromedia Fireworks&lt;/li&gt;
+&lt;/ul&gt;
+		</code></pre>
+		</div>
+		
+		<div id="div-CodejQuery" class="tab-content" style="display: none;">
+		<pre><code class="JavaScript">
+$(document).ready( function() {
+	var headers = {'Technical Skills': ["Software Development", "Web Development", "Database Management"],
+				   "Languages": ["C", "C#", "Java", "PHP", "ASP", "JavaScript", "MySQL", "HTML5", "jQuery", "Android", "ActionScript 3", "UML"], 
+				   "Software": ["Visual Studio", "Eclipse", "XAMPP", "TeamCity", "Jenkins", "Macromedia Fireworks"]};		
+		
+$.each(headers, function(header, entry){
+	var header_title = $('&lt;h2/&gt;')
+		.text(header);
+	var ul = $('&lt;ul/&gt;');
+	$.each(entry, function(i, value){
+		var li = $("&lt;li/&gt;")
+		.text(value)
+		.appendTo(ul);
+	});
+			
+	$(document).append(header_title);
+	$(document).append(ul);
+});	
+		</code></pre>
+		</div>
+		
+		<div id="div-CodeASPNETCSharp" class="tab-content" style="display: none;">
+		<pre><code class="C#">
+/* WebForm1 */
+
+&lt;body&gt;
+    &lt;form id="form1" runat="server"&gt;
+        &lt;div id="DIVSkills" runat="server"&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+
+
+/* Code Behind File written in C# */
+
+public partial class WebForm1 : System.Web.UI.Page
+    {
+        public class MultiDimDictList&lt;K, T&gt;: Dictionary&lt;K, List&lt;T&gt;&gt;  { }
+
+        MultiDimDictList&lt;string, string&gt; Skills;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if(!IsPostBack)
+            {
+                PopulateData();
+
+                foreach(KeyValuePair&lt;string, List&lt;string&gt;&gt; skill in Skills)
+                {
+                    HtmlGenericControl heading = new HtmlGenericControl("h2");
+                    heading.InnerHtml = skill.Key;
+                    Literal uList = new Literal();
+                    uList.Text = "&lt;ul&gt;";
+
+                    foreach(string entry in skill.Value)
+                    {
+                        uList.Text += "&lt;li&gt;" + entry + "&lt;/li&gt;";
+                    }
+
+                    uList.Text += "&lt;/ul&gt;";
+
+                    DIVSkills.Controls.Add(heading);
+                    DIVSkills.Controls.Add(uList);
+                }
+            }
+            
+
+        }
+
+        private void PopulateData()
+        {
+            Skills = new MultiDimDictList&lt;string, string&gt;();
+
+            Skills.Add("Technical Skills", new List&lt;string&gt;());
+            Skills["Technical Skills"].Add("Software Development");
+            Skills["Technical Skills"].Add("Web Development");
+            Skills["Technical Skills"].Add("Database Management");
+
+            Skills.Add("Languages", new List&lt;string&gt;());
+            Skills["Languages"].Add("C");
+            Skills["Languages"].Add("C#");
+            Skills["Languages"].Add("Java");
+            Skills["Languages"].Add("PHP");
+            Skills["Languages"].Add("ASP.NET");
+            Skills["Languages"].Add("JavaScript");
+            Skills["Languages"].Add("MySQL");
+            Skills["Languages"].Add("HTML5");
+            Skills["Languages"].Add("jQuery");
+            Skills["Languages"].Add("Android");
+            Skills["Languages"].Add("ActionScript 3");
+            Skills["Languages"].Add("UML");
+
+            Skills.Add("Software", new List&lt;string&gt;());
+            Skills["Software"].Add("Visual Studio");
+            Skills["Software"].Add("Eclipse");
+            Skills["Software"].Add("XAMPP");
+            Skills["Software"].Add("TeamCity");
+            Skills["Software"].Add("Jenkins");
+            Skills["Software"].Add("Macomedia Fireworks");
+
+        }
+    }
+		</code></pre>
+		</div>
+		
+		<div id="div-CodePHP" class="tab-content" style="display: none;">
+		<pre><code class="PHP">
+&lt;?php
+
+	$skills = array(
+		"Technical Skills" =&gt; array("Software Development", "Web Development", "Database Management"),
+		"Languages" =&gt; array("C", "C#", "Java", "PHP", "ASP", "JavaScript", "MySQL", "HTML5", "jQuery", "Android", "ActionScript 3", "UML"),
+		"Software" =&gt; array("Visual Studio", "Eclipse", "XAMPP", "TeamCity", "Jenkins", "Macromedia Fireworks")
+	);
+
+?&gt;
+
+&lt;body&gt;
+	&lt;div&gt;
+		&lt;?php
+			foreach($skills as $key =&gt; $value)
+			{
+				echo "&lt;h2&gt;", $key, "&lt;/h2&gt;";
+				echo "&lt;ul&gt;";
+				foreach($value as $entry)
+				{
+					echo "&lt;li&gt;", $entry, "&lt;/li&gt;";
+				}
+				echo "&lt;/ul&gt;";
+			}
+		?&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+		</code></pre>
+		</div>
+		
+		<!-- Navigation Tabs for Languages -->
+		
+		<div class="nav-tabs">
+			<button id="tab-Text" class="tab-btn" lang="Text">Plain Text</button>
+			<button id="tab-HTML" class="tab-btn" lang="HTML">HTML</button>
+			<button id="tab-jQuery" class="tab-btn" lang="jQuery">jQuery</button>
+			<button id="tab-C#" class="tab-btn" lang="ASPNETCSharp">ASP.NET + C#</button>
+			<button id="tab-PHP" class="tab-btn" lang="PHP">PHP</button>
+		</div>
+		
+		<!-- End of div-Skills -->
 		</div>
 		
 		<div id="div-Story" class="main-div" style="display: none;">
@@ -123,27 +335,22 @@
 				
 		<div id="div-Contact" class="main-div" style="display: none;">
 			<div class="container">
-			  <form action="action_page.php">
+			  <form id="contact-form">
 
-				<label for="fname">First Name</label><br />
-				<input type="text" id="fname" name="firstname" placeholder="Your name..">
-				<br />
-				<label for="lname">Last Name</label><br />
-				<input type="text" id="lname" name="lastname" placeholder="Your last name..">
-				<br />
-				<label for="country">Purpose</label><br />
+				<input type="hidden" name="contact_number">
+				<label>Name</label>
+				<input type="text" name="user_name">
+				<label>Email</label>
+				<input type="email" name="user_email">
+				<label>Purpose</label>
 				<select id="dropdown-Purpose" name="purpose">
-				  <option value="australia">Inquire</option>
-				  <option value="canada">Hire</option>
-				  <option value="usa">Collaborate</option>
+				  <option value="inquire">Inquire</option>
+				  <option value="hire">Hire</option>
+				  <option value="collaborate-with">Collaborate</option>
 				</select>
-				<br />
-				<label for="subject">Subject</label>
-				<br />
-				<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-				<br />
-				<div style="text-align: right;"><input type="submit" value="Submit"></div>
-
+				<label>Message</label>
+				<textarea name="contact"></textarea>
+				<div style="text-align: right;"><input type="submit" value="Send"></div>
 			  </form>
 			</div>
 		</div>
