@@ -228,29 +228,29 @@ public partial class WebForm1 : System.Web.UI.Page
 		<pre><code class="PHP">
 &lt;?php
 
-	$skills = array(
-		"Technical Skills" =&gt; array("Software Development", "Web Development", "Database Management"),
-		"Languages" =&gt; array("C", "C#", "Java", "PHP", "ASP", "JavaScript", "MySQL", "HTML5", "jQuery", "Android", "ActionScript 3", "UML"),
-		"Software" =&gt; array("Visual Studio", "Eclipse", "XAMPP", "TeamCity", "Jenkins", "Macromedia Fireworks")
-	);
+$skills = array(
+	"Technical Skills" =&gt; array("Software Development", "Web Development", "Database Management"),
+	"Languages" =&gt; array("C", "C#", "Java", "PHP", "ASP", "JavaScript", "MySQL", "HTML5", "jQuery", "Android", "ActionScript 3", "UML"),
+	"Software" =&gt; array("Visual Studio", "Eclipse", "XAMPP", "TeamCity", "Jenkins", "Macromedia Fireworks")
+);
 
 ?&gt;
 
 &lt;body&gt;
 	&lt;div&gt;
-		&lt;?php
-			foreach($skills as $key =&gt; $value)
-			{
-				echo "&lt;h2&gt;", $key, "&lt;/h2&gt;";
-				echo "&lt;ul&gt;";
-				foreach($value as $entry)
-				{
-					echo "&lt;li&gt;", $entry, "&lt;/li&gt;";
-				}
-				echo "&lt;/ul&gt;";
-			}
-		?&gt;
-	&lt;/div&gt;
+	&lt;?php
+		foreach($skills as $key =&gt; $value)
+		{
+		  echo "&lt;h2&gt;", $key, "&lt;/h2&gt;";
+		  echo "&lt;ul&gt;";
+		  foreach($value as $entry)
+		  {
+			echo "&lt;li&gt;", $entry, "&lt;/li&gt;";
+		  }
+		  echo "&lt;/ul&gt;";
+		}
+	?&gt;
+&lt;/div&gt;
 &lt;/body&gt;
 		</code></pre>
 		</div>
