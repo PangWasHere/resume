@@ -1,6 +1,4 @@
-/*body {
-	font-family: 'PT Sans', sans-serif;
-}*/
+/* General Styles */
 html, body {
 	margin: 0;
 	padding: 0;
@@ -20,6 +18,47 @@ a[target='_blank']{
 }
 	
 a[target='_blank']::after {content: '\2750';}
+
+main {
+	margin-left: 1em;
+	margin-right: 1em;
+	border:1px solid;
+	border-bottom: none;
+	min-height: calc(100% - 300px);
+}
+
+.main-div {
+	padding: 1.5em;
+}
+	
+nav {
+	text-align: center;
+	margin-bottom: 1.5em;
+}
+	
+.nav-btn {
+	display: inline-block;
+	border: 1px solid;
+	padding: 1em;
+	text-align: center;
+	margin-bottom: .5em;
+}
+
+.rect-btn {
+	width: 7em;
+}
+	
+.nav-btn:hover {
+	background-color: grey;
+	color: white;
+}
+	
+.nav-btn-selected {
+	background-color: #d0d0d0;
+	color: black;
+}
+
+/* Index Styles */
 
 .outer {
   display: table;
@@ -92,7 +131,7 @@ a[target='_blank']::after {content: '\2750';}
 	font-family: 'Unkempt', cursive;
 }
 		
-.rainbow-wide-btn:hover {
+.rainbow-wide-btn:hover, .rainbow-text {
   background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
   background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
   color:transparent;
@@ -114,44 +153,7 @@ a[target='_blank']::after {content: '\2750';}
 	color: grey;
 }
 
-main {
-	margin-left: 1em;
-	margin-right: 1em;
-	border:1px solid;
-	border-bottom: none;
-	min-height: calc(100% - 300px);
-}
-
-.main-div {
-	padding: 1.5em;
-}
-	
-nav {
-	text-align: center;
-	margin-bottom: 1.5em;
-}
-	
-.nav-btn {
-	display: inline-block;
-	border: 1px solid;
-	padding: 1em;
-	text-align: center;
-	margin-bottom: .5em;
-}
-
-.rect-btn {
-	width: 7em;
-}
-	
-.nav-btn:hover {
-	background-color: grey;
-	color: white;
-}
-	
-.nav-btn-selected {
-	background-color: #d0d0d0;
-	color: black;
-}
+/* CoderPang Styles */
 
 blockquote{
   font-size: 30px;
@@ -187,7 +189,44 @@ p{
   font-style: italic;
 }
 
-input[type=text], select, textarea {
+#div-CodeText {
+	display: block;
+	overflow-x: auto;
+	padding: .5em;
+	margin: 1em 0px;
+	background-color: #F0F0F0;
+}
+
+.nav-tabs {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.nav-tabs button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.nav-tabs button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.nav-tabs button.active {
+  background-color: #ccc;
+}
+
+/* Contact Form Section Styles */
+
+input[type=text], input[type=email], select, textarea {
 	width: 100%;
 	padding: 12px;  
 	border: 1px solid #ccc;
@@ -208,6 +247,10 @@ input[type=submit] {
 	width: 30%;
 }
 
+textarea {
+	height: 200px;
+}
+
 input[type=submit]:hover {
 	background-color: #6097e6;
 }
@@ -218,4 +261,20 @@ input[type=submit]:hover {
 	background-color: #f2f2f2;
 	padding: 20px;
 	margin: auto;
+}
+
+/* ArtistPang Styles */
+
+.img-holder {
+	text-align: center;
+}
+
+.img-holder > img {
+	max-width: 100%;
+	
+}
+
+.equal-imgs > img {
+	width: 300px;
+	height: 300px;
 }
