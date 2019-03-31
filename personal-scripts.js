@@ -1,5 +1,3 @@
-<script type="text/javascript">
-	
 /* Main Navigation Buttons */
 $(document).ready( function(){
 	$(".nav-btn").click( function(){
@@ -38,4 +36,3 @@ $(".tab-btn").click( function() {
 		});
 	});
 });	
-	</script>
