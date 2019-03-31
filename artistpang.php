@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
 	<title>ang creates</title>
+	<!-- Favicon images -->
 	<link rel="apple-touch-icon" sizes="180x180" href="imgs/favicon_io/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon_io/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon_io/favicon-16x16.png">
@@ -9,33 +10,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Major+Mono+Display|Monoton|Noto+Sans|Nanum+Brush+Script|Press+Start+2P|Special+Elite|Unkempt" rel="stylesheet">
 	<link href="personal-styles.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<script>
-
-	$(document).ready( function(){
-		$(".nav-btn").click( function(){
-			var page = $(this).attr("page");
-			$(".main-div").hide();
-			$(".nav-btn").removeClass("nav-btn-selected");
-			var shown_div = "#div-" + page;
-			var btn_selected ="#btn-" + page;
-			$(shown_div).show();
-			$(btn_selected).addClass("nav-btn-selected");
-			console.log(shown_div);
-		});	
-		
-		$("#div-Slideshow > div:gt(0)").hide();
-
-		setInterval(function() {
-		  $('#div-Slideshow > div:first')
-			.fadeOut(1000)
-			.next()
-			.fadeIn(1000)
-			.end()
-			.appendTo('#div-Slideshow');
-		}, 3000);
-		});
-		
-	</script>
+	<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+	<script type="text/javascript" src="personal-scripts.js"></script>
 </head>
 	
 	<body>
@@ -88,30 +64,9 @@
 			
 		</div>
 		<div id="div-Contact" page="Contact" class="main-div" style="display: none;">
-		<div class="container">
-			  <form action="action_page.php">
-
-				<label for="fname">First Name</label><br />
-				<input type="text" id="fname" name="firstname" placeholder="Your name..">
-				<br />
-				<label for="lname">Last Name</label><br />
-				<input type="text" id="lname" name="lastname" placeholder="Your last name..">
-				<br />
-				<label for="country">Purpose</label><br />
-				<select id="dropdown-Purpose" name="purpose">
-				  <option value="australia">Inquire</option>
-				  <option value="canada">Hire</option>
-				  <option value="usa">Collaborate</option>
-				</select>
-				<br />
-				<label for="subject">Subject</label>
-				<br />
-				<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-				<br />
-				<div style="text-align: right;"><input type="submit" value="Submit"></div>
-
-			  </form>
-			</div>	
+			<?php 
+				include 'contact.php';
+			?>
 		</div>
 	</main>
 	</body>

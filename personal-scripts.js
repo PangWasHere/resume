@@ -8,7 +8,6 @@ $(document).ready( function(){
 		var btn_selected ="#btn-" + page;
 		$(shown_div).show();
 		$(btn_selected).addClass("nav-btn-selected");
-		console.log(shown_div);
 });
 	
 /* Tabs in Skills section */
