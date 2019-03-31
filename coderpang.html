@@ -3,51 +3,13 @@
 	<title>Pang.AsCoder()</title>
 	<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Major+Mono+Display|Monoton|Noto+Sans|Nanum+Brush+Script|Press+Start+2P|Special+Elite|Unkempt" rel="stylesheet">
 	<link href="personal-styles.css" rel="stylesheet">
+	
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.min.js"></script>
 	<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-	<script type="text/javascript">
-	
-	/* Main Navigation Buttons */
-	$(document).ready( function(){
-		$(".nav-btn").click( function(){
-			var page = $(this).attr("page");
-			$(".main-div").hide();
-			$('.nav-btn').removeClass("nav-btn-selected");
-			var shown_div = "#div-" + page;
-			var btn_selected ="#btn-" + page;
-			$(shown_div).show();
-			$(btn_selected).addClass("nav-btn-selected");
-			console.log(shown_div);
-		});
-		
-	/* Tabs in Skills section */
-	$(".tab-btn").click( function() {
-		var code_lang = $(this).attr("lang");
-		$(".tab-content").hide();
-		var shown_tab = "#div-Code" + code_lang;
-		$(shown_tab).show();
-		
-	});
-		
-	/* Code Snippet Syntax Highlighter using HighlightJS */	
-	  document.querySelectorAll('pre code').forEach((block) => {
-		hljs.highlightBlock(block);
-		hljs.lineNumbersBlock(block);
-	  });
-	  
-	  	/*Email JS scripts */
-        emailjs.init("user_d7C879uAXjNHoEVoyQi3r");
-		document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                this.contact_number.value = Math.random() * 100000 | 0;
-                emailjs.sendForm('contact_service', 'contact_template', this);
-		});
-	});	
-	</script>
-	
+	<script type="text/javascript" src="personal-scripts.js"></script>
 </head>
 
 <body>	
@@ -63,6 +25,7 @@
 		</nav>
 	</header>
 	<main>
+	<!-- Overview Section -->	
 		<div id="div-Overview" class="main-div">
 		
 			<h5><code><span style="color:blue;">&lt;programmer&gt;</span><span style="color:green;">&lt;computerScientist&gt;</span>
@@ -83,6 +46,7 @@
 			</ul>
 		</div>
 		
+	<!-- Skills Section -->		
 		<div id="div-Skills" class="main-div" style="display: none;">
 		
 		<div id="div-CodeText" class="tab-content">
@@ -303,7 +267,8 @@ public partial class WebForm1 : System.Web.UI.Page
 		
 		<!-- End of div-Skills -->
 		</div>
-		
+	
+	<!-- Story Section -->		
 		<div id="div-Story" class="main-div" style="display: none;">
 			 <blockquote>
 			 <p class="quotation">Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program.</p>
@@ -332,12 +297,10 @@ public partial class WebForm1 : System.Web.UI.Page
 		</p>		
 		</div>
 		
-				
+	<!-- Contact Section -->			
 		<div id="div-Contact" class="main-div" style="display: none;">
 			<div class="container">
 			  <form id="contact-form">
-
-				<input type="hidden" name="contact_number">
 				<label>Name</label>
 				<input type="text" name="user_name">
 				<label>Email</label>
@@ -346,10 +309,10 @@ public partial class WebForm1 : System.Web.UI.Page
 				<select id="dropdown-Purpose" name="purpose">
 				  <option value="inquire">Inquire</option>
 				  <option value="hire">Hire</option>
-				  <option value="collaborate-with">Collaborate</option>
+				  <option value="collaborate with">Collaborate</option>
 				</select>
 				<label>Message</label>
-				<textarea name="contact"></textarea>
+				<textarea name="message"></textarea>
 				<div style="text-align: right;"><input type="submit" value="Send"></div>
 			  </form>
 			</div>
