@@ -9,9 +9,9 @@
 		  <div class="middle">
 			<div class="inner">
 			  <h1 class="jumbo">Pang as</h1>
-			  <a href="coderpang.html" class="code-text wide-btn code-wide-btn" style="padding: 1em;">< a coder ></a>
-			  <a href="writerpang.html" class="literary-text wide-btn writer-wide-btn" style="font-size: 2em;">a writer</a>
-			  <a href="artistpang.html" class="playful-text wide-btn rainbow-wide-btn" style="font-size: 2em;">an artist</a>
+			  <a href="coderpang.php" class="code-text wide-btn code-wide-btn" style="padding: 1em;">< a coder ></a>
+			  <a href="writerpang.php" class="literary-text wide-btn writer-wide-btn" style="font-size: 2em;">a writer</a>
+			  <a href="artistpang.php" class="playful-text wide-btn rainbow-wide-btn" style="font-size: 2em;">an artist</a>
 			  </div>
 			</div>
 		  </div>
