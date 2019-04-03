@@ -278,3 +278,33 @@ input[type=submit]:hover {
 	width: 300px;
 	height: 300px;
 }
+
+/* ArtistPang Styles */
+#div-Gallery {
+	text-align: center;
+}
+.div-Image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 7em;
+	width: 5em;
+	padding: .2em;
+	margin: 1em;
+	border: 1px solid;	
+}
+	
+.div-Image:hover {
+	background-color: #ccc8c8;
+}
+
+.div-Image img {
+	width: 100%;
+}
+	
+.div-ImageContainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
