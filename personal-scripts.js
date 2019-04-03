@@ -34,4 +34,49 @@ $(".tab-btn").click( function() {
 		   alert('There seems to be a problem sending your message.');
 		});
 	});
+	
+	
+	var img_arrs = {
+		'DigitalArt': ['imgs/creativity-not-overthinking.jpg', 'imgs/rogue.png', 'imgs/october-creepy.jpg', 'imgs/janette-ruiz.jpg', 'imgs/ano-hana-anjou.png', 'imgs/ano-hana-tsurimi.png'],
+		'Facebook Banners': ['imgs/fb-goat.png', 'imgs/fb-are-you-okay.png', 'imgs/fb-smiling-kid.png'],
+		'Sketches': ['imgs/hand-drawing.PNG', 'imgs/devil-angel-pang.PNG', 'imgs/lava-doodle.PNG', 'imgs/stuck-in-ayala.PNG', 'imgs/ten-years-after.PNG']
+	}
+		
+		$.each(img_arrs, function(header, img_arr){
+			var header_title = $('<h2/>',{
+					html: header
+				});
+			$(header_title).appendTo($('#div-Gallery'));
+			
+			var div_image_container_id = "div-" + header.replace(/ /g, '');
+			var div_image_container = $('<div/>', {
+				"class": "div-ImageContainer",
+				"id": div_image_container_id
+			});
+			$(div_image_container).appendTo($('#div-Gallery'));
+			console.log(div_image_container_id);
+			$.each(img_arr,	function(i, value){	
+				var image_holder = $( "<a/>", {
+					html: "<img src='" + value + "' />",
+					"class": "div-Image",
+					"source" : value,
+					href: "#"
+				});
+				console.log("in loop: " + div_image_container_id);
+				$('#' + div_image_container_id).append(image_holder);				
+			});
+			console.log("STHAP");
+			
+		});
+		
+		$(".div-Image").click( function() {
+			$(".div-ShowImage").empty();
+			//alert($(this).attr("source"));
+			var image = $('<img/>', {
+				"src": $(this).attr("source"),
+				"style": "max-width: 80%"
+			});
+			
+			$(".div-ShowImage").append(image);
+		});
 });	
