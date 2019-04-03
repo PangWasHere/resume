@@ -120,16 +120,16 @@
 		<div id="div-CodejQuery" class="tab-content" style="display: none;">
 		<pre><code class="JavaScript">
 $(document).ready( function() {
-	var headers = {'Technical Skills': ["Software Development", "Web Development", "Database Management"],
-				   "Languages": ["C", "C#", "Java", "PHP", "ASP.NET", "JavaScript", "MySQL", "HTML5", "jQuery", "Android", "ActionScript 3", "UML"], 
-				   "Software": ["Visual Studio", "Eclipse", "XAMPP", "TeamCity", "Jenkins", "Macromedia Fireworks"]};		
+	var headers = {'Technical Skills': ['Software Development', 'Web Development', 'Database Management'],
+				   'Languages': ['C', 'C#', 'Java', 'PHP', 'ASP.NET', 'JavaScript', 'MySQL', 'HTML5', 'jQuery', 'Android', 'ActionScript 3', 'UML'], 
+				   'Software': ['Visual Studio', 'Eclipse', 'XAMPP', 'TeamCity', 'Jenkins', 'Macromedia Fireworks']};		
 		
 $.each(headers, function(header, entry){
 	var header_title = $('&lt;h2/&gt;')
 		.text(header);
 	var ul = $('&lt;ul/&gt;');
 	$.each(entry, function(i, value){
-		var li = $("&lt;li/&gt;")
+		var li = $('&lt;li/&gt;')
 		.text(value)
 		.appendTo(ul);
 	});
@@ -243,10 +243,7 @@ $skills = array(
 		{
 		  echo "&lt;h2&gt;", $key, "&lt;/h2&gt;";
 		  echo "&lt;ul&gt;";
-		  foreach($value as $entry)
-		  {
-			echo "&lt;li&gt;", $entry, "&lt;/li&gt;";
-		  }
+		  foreach($value as $entry){  echo "&lt;li&gt;", $entry, "&lt;/li&gt;";  }
 		  echo "&lt;/ul&gt;";
 		}
 	?&gt;
