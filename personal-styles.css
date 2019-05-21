@@ -308,3 +308,12 @@ input[type=submit]:hover {
 	flex-wrap: wrap;
 	justify-content: center;
 }
+
+.social-network-link-list {
+	list-style: none;
+	text-align: center;
+}
+
+.social-network-icon-img {
+	width: 52px;
+}
