@@ -17,7 +17,7 @@ a[target='_blank']{
 	color: blue;
 }
 	
-a[target='_blank']::after {content: '\2750';}
+.text-link::after {content: '\2750';}
 
 main {
 	margin-left: 1em;
