@@ -25,7 +25,7 @@ $(".tab-btn").click( function() {
  });
 	  
 /*Email JS scripts */
-    emailjs.init("user_d7C879uAXjNHoEVoyQi3r");
+    /*emailjs.init("user_d7C879uAXjNHoEVoyQi3r");
 	document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault();
         emailjs.sendForm('gmail', 'template_sljO5xT4', this).then(function(response) {
@@ -33,7 +33,7 @@ $(".tab-btn").click( function() {
 		}, function(error) {
 		   alert('There seems to be a problem sending your message.');
 		});
-	});
+	});*/
 	
 	
 	var img_arrs = {
