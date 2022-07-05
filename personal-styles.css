@@ -1,3 +1,9 @@
+/*
+	Fonts
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
 /* General Styles */
 html, body {
 	margin: 0;
@@ -130,6 +136,10 @@ nav {
 .playful-text {
 	font-family: 'Unkempt', cursive;
 }
+
+.chalkboard-text {
+	font-family: 'Fredericka the Great', cursive;
+}
 		
 .rainbow-wide-btn:hover, .rainbow-text {
   background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
@@ -137,6 +147,13 @@ nav {
   color:transparent;
   -webkit-background-clip: text;
   background-clip: text;
+}
+
+.chalkboard-wide-btn:hover {
+	background: #15422E;
+	color: white;
+	padding: 2px 30px 5px;
+	border: 5px solid brown;
 }
 		
 .easter-egg {
@@ -317,3 +334,92 @@ input[type=submit]:hover {
 .social-network-icon-img {
 	width: 52px;
 }
+
+quote {
+	display: block;
+	width: 80%;
+	margin: 50px auto;
+}
+
+/* Teacher Page Styles */
+
+main#page-Teacher {
+	background-color: #15422E;
+	border: 10px solid brown;
+	color: white;
+}
+
+main#page-Teacher .main-div {
+	position: relative;
+	display: flex;
+	flex-direction: row-reverse;
+	font-family: 'Fredericka the Great', cursive;
+}
+
+main#page-Teacher .main-div .quote {
+	width: 35%;
+}
+
+main#page-Teacher .main-div .quote p:not(.quote-source) {
+	font-size: 1.5em;
+}
+
+main#page-Teacher p.quote-source{
+	font-size: 1em;
+	text-align: right;
+}
+
+main#page-Teacher .main-div .main-content {
+	width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+
+	main#page-Teacher .main-div {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	main#page-Teacher .main-div .quote {
+		width: 100%;
+		margin-bottom: 100px;
+	}
+}
+
+main#page-Teacher .main-div h3 {
+	text-align: center;
+}
+
+main#page-Teacher .resource-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+main#page-Teacher .resource {
+	display: block;
+	flex-basis: 230px;
+    padding: 10px;
+	margin: 10px;
+	border-style: groove;
+    box-sizing: border-box;
+	text-align: center;
+	color: white;
+}
+
+main#page-Teacher .resource img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+}
+
+main#page-Teacher .resource .resource-name {
+	font-size: 0.8em;
+}
+
+/* Overrides */
+
+.hljs-ln td {
+	padding-right: 20px !important; /* Overrides the styles from highlighjs library. Adds space between the number and code. */
+}
+
